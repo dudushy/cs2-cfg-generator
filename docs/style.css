@@ -27,11 +27,11 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: var(--text);
   background-color: var(--wall);
   text-align: center;
-  font-family: monospace;
+  font-family: sans-serif;
   overflow: auto;
 }
 
@@ -74,4 +74,38 @@ h2 {
   h2 {
     font-size: calc(var(--responsiveUnit) * 3);
   }
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1%;
+  border: calc(var(--responsiveUnit) * 0.1) solid var(--warning);
+  border-radius: calc(var(--responsiveUnit) * 0.5);
+}
+
+.inputDiv label b {
+  color: var(--primary);
+}
+
+.inputDiv input {
+  color: var(--warning);
+}
+
+.generateDiv {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 1%;
+  padding: 1%;
+  border: calc(var(--responsiveUnit) * 0.1) solid var(--success);
+  border-radius: calc(var(--responsiveUnit) * 0.5);
+}
+
+.generateDiv input[type="submit"] {
+  color: var(--success);
+  background: var(--dark);
+  margin-top: 6%;
+  padding: 5%;
 }

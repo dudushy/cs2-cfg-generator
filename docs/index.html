@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>template-web</title>
+  <title>CS2 CFG Generator</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
@@ -12,22 +12,34 @@
 <body>
   <header>
     <h1>
-      <a href="https://github.com/dudushy/template-web" target="_blank">template-web</a>
+      <a href="https://github.com/dudushy/cs2-cfg-generator" target="_blank">cs2-cfg-generator</a>
     </h1>
   </header>
 
   <main>
-    <h1>Hello World!</h1>
+    <div class="inputDiv">
+      <p>
+        Launch CS2, enable developer console and run <code>host_writeconfig</code>.
+      </p>
 
-    <button style="background-color: var(--primary)">primary</button>
-    <button style="background-color: var(--secondary)">secondary</button>
-    <button style="background-color: var(--tertiary)">tertiary</button>
-    <button style="background-color: var(--success)">success</button>
-    <button style="background-color: var(--warning)">warning</button>
-    <button style="background-color: var(--danger)">danger</button>
-    <button style="background-color: var(--dark)">dark</button>
-    <button style="background-color: var(--medium)">medium</button>
-    <button style="background-color: var(--light)">light</button>
+      <p>
+        Then open the Steam directory folder <code>C:\Program Files (x86)\Steam\userdata\<a href="https://www.steamidfinder.com/">USER_ID</a>\730\local\cfg</code>
+      </p>
+
+      <label for="vcfgInput">
+        And finally, upload <b>cs2_machine_convars</b>, <b>cs2_user_convars_0_slot0</b> and <b>cs2_user_keys_0_slot0</b> files
+      </label>
+      <input id="vcfgInput" type="file" accept=".vcfg" multiple>
+    </div>
+
+    <div class="generateDiv">
+      <div>
+        <label for="excludeXhairViewmodel">Exclude crosshair and viewmodel</label>
+        <input id="excludeXhairViewmodel" type="checkbox" checked>
+      </div>
+
+      <input id="generateInput" type="submit" value="Generate CFG">
+    </div>
   </main>
 
   <footer>
