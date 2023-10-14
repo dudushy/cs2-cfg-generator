@@ -17,7 +17,7 @@
   </header>
 
   <main>
-    <div class="inputDiv">
+    <div class="tutorialDiv">
       <p>
         Launch CS2, enable developer console and run <code>host_writeconfig</code>.
       </p>
@@ -25,9 +25,11 @@
       <p>
         Then open the Steam directory folder <code>C:\Program Files (x86)\Steam\userdata\<a href="https://www.steamidfinder.com/">USER_ID</a>\730\local\cfg</code>
       </p>
+    </div>
 
+    <div class="inputDiv">
       <label for="vcfgInput">
-        And finally, upload <b>cs2_machine_convars</b>, <b>cs2_user_convars_0_slot0</b> and <b>cs2_user_keys_0_slot0</b> files
+        Upload <code>cs2_machine_convars.vcfg</code>, <code>cs2_user_convars_0_slot0.vcfg</code> and <code>cs2_user_keys_0_slot0.vcfg</code> files here
       </label>
       <input id="vcfgInput" type="file" accept=".vcfg" multiple>
     </div>
@@ -37,6 +39,8 @@
         <label for="excludeXhairViewmodel">Exclude crosshair and viewmodel</label>
         <input id="excludeXhairViewmodel" type="checkbox" checked>
       </div>
+
+      <textarea id="aliasTextarea" placeholder="Insert your alias here"></textarea>
 
       <input id="generateInput" type="submit" value="Generate CFG">
     </div>

@@ -76,21 +76,37 @@ h2 {
   }
 }
 
-.inputDiv {
+.tutorialDiv {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   padding: 1%;
-  border: calc(var(--responsiveUnit) * 0.1) solid var(--warning);
+  border: calc(var(--responsiveUnit) * 0.1) solid var(--primary);
   border-radius: calc(var(--responsiveUnit) * 0.5);
-}
-
-.inputDiv label b {
   color: var(--primary);
 }
 
-.inputDiv input {
+.tutorialDiv code {
+  color: var(--light);
+}
+
+.tutorialDiv a {
   color: var(--warning);
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 1%;
+  padding: 1%;
+  border: calc(var(--responsiveUnit) * 0.1) solid var(--warning);
+  border-radius: calc(var(--responsiveUnit) * 0.5);
+  color: var(--warning);
+}
+
+.inputDiv code {
+  color: var(--light);
 }
 
 .generateDiv {
