@@ -84,11 +84,12 @@ section {
   margin-block: 1%;
   padding: 1%;
   border-radius: calc(var(--responsiveUnit) * 0.5);
+  background: var(--dark);
 }
 
 #step1 {
-  border: calc(var(--responsiveUnit) * 0.1) solid var(--primary);
-  color: var(--primary);
+  border: calc(var(--responsiveUnit) * 0.1) solid var(--secondary);
+  color: var(--secondary);
 }
 
 #step2 {
@@ -114,7 +115,7 @@ section {
 }
 
 #step1 .sectionTitle {
-  border-bottom: calc(var(--responsiveUnit) * 0.2) solid var(--primary);
+  border-bottom: calc(var(--responsiveUnit) * 0.2) solid var(--secondary);
 }
 
 #step2 .sectionTitle {
@@ -129,8 +130,22 @@ li {
   text-align: left;
 }
 
+li b {
+  /* text-decoration: underline; */
+  color: var(--primary);
+}
+
+li #s {
+  color: var(--warning);
+}
+
+li #two {
+  color: var(--light);
+}
+
 li a {
-  color: var(--secondary);
+  color: var(--danger);
+  font-weight: bolder;
 }
 
 /* .sectionContent {} */
