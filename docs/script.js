@@ -4,6 +4,35 @@ console.log(`[${TITLE}] init`);
 let selectedFiles = [];
 let cfg = '';
 let excludeXhairViewmodel = true;
+const excludeArray = [
+  'cl_crosshair_drawoutline',
+  'cl_crosshair_dynamic_maxdist_splitratio',
+  'cl_crosshair_dynamic_splitalpha_innermod',
+  'cl_crosshair_dynamic_splitalpha_outermod',
+  'cl_crosshair_dynamic_splitdist',
+  'cl_crosshair_outlinethickness',
+  'cl_crosshair_sniper_show_normal_inaccuracy',
+  'cl_crosshair_sniper_width',
+  'cl_crosshair_t',
+  'cl_crosshairalpha',
+  'cl_crosshaircolor',
+  'cl_crosshaircolor_b',
+  'cl_crosshaircolor_g',
+  'cl_crosshaircolor_r',
+  'cl_crosshairdot',
+  'cl_crosshairgap',
+  'cl_crosshairgap_useweaponvalue',
+  'cl_crosshairsize',
+  'cl_crosshairstyle',
+  'cl_crosshairthickness',
+  'cl_crosshairusealpha',
+
+  'viewmodel_fov',
+  'viewmodel_offset_x',
+  'viewmodel_offset_y',
+  'viewmodel_offset_z',
+  'viewmodel_presetpos'
+];
 
 const fileInput = document.getElementById('vcfgInput');
 console.log(`[${TITLE}] fileInput`, fileInput);
@@ -49,37 +78,7 @@ async function readFile(file) {
           if (file.name == 'cs2_user_keys_0_slot0.vcfg' && secondValue != '<unbound>') {
             resultLine = `bind "${firstValue}" "${secondValue}"\n`;
           } else {
-            if (excludeXhairViewmodel && firstValue.includes([
-              'cl_crosshair_drawoutline',
-              'cl_crosshair_dynamic_maxdist_splitratio',
-              'cl_crosshair_dynamic_splitalpha_innermod',
-              'cl_crosshair_dynamic_splitalpha_outermod',
-              'cl_crosshair_dynamic_splitdist',
-              'cl_crosshair_outlinethickness',
-              'cl_crosshair_sniper_show_normal_inaccuracy',
-              'cl_crosshair_sniper_width',
-              'cl_crosshair_t',
-              'cl_crosshairalpha',
-              'cl_crosshaircolor',
-              'cl_crosshaircolor_b',
-              'cl_crosshaircolor_g',
-              'cl_crosshaircolor_r',
-              'cl_crosshairdot',
-              'cl_crosshairgap',
-              'cl_crosshairgap_useweaponvalue',
-              'cl_crosshairsize',
-              'cl_crosshairstyle',
-              'cl_crosshairthickness',
-              'cl_crosshairusealpha',
-
-              'viewmodel_fov',
-              'viewmodel_offset_x',
-              'viewmodel_offset_y',
-              'viewmodel_offset_z',
-              'viewmodel_presetpos'
-            ]))
-
-              resultLine = `${firstValue} "${secondValue}"\n`;
+            if (!(excludeXhairViewmodel && firstValue.includes(excludeArray))) resultLine = `${firstValue} "${secondValue}"\n`;
           }
 
           console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) resultLine`, resultLine);
