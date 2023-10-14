@@ -78,7 +78,15 @@ async function readFile(file) {
           if (file.name == 'cs2_user_keys_0_slot0.vcfg' && secondValue != '<unbound>') {
             resultLine = `bind "${firstValue}" "${secondValue}"\n`;
           } else {
-            if (excludeXhairViewmodel && !firstValue.includes(excludeArray)) resultLine = `${firstValue} "${secondValue}"\n`;
+            if (excludeXhairViewmodel) {
+              if (excludeArray.includes(firstValue)) {
+                console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) excludeArray.includes(${firstValue})`, excludeArray.includes(firstValue));
+              } else {
+                resultLine = `${firstValue} "${secondValue}"\n`;
+              }
+            } else {
+              resultLine = `${firstValue} "${secondValue}"\n`;
+            }
           }
 
           console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) resultLine`, resultLine);
