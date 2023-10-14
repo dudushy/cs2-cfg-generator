@@ -23,6 +23,7 @@ generateInput.onclick = async () => {
   console.log(`[${TITLE}#generateInput.onclick]`);
 
   excludeXhairViewmodel = document.getElementById('excludeXhairViewmodel').checked;
+  console.log(`[${TITLE}#generateInput.onclick] excludeXhairViewmodel`, excludeXhairViewmodel);
 
   await generateCfg();
 }
