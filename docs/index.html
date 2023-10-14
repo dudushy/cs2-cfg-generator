@@ -17,33 +17,64 @@
   </header>
 
   <main>
-    <div class="tutorialDiv">
-      <p>
-        Launch CS2, enable developer console and run <code>host_writeconfig</code>.
-      </p>
+    <section id="step1">
+      <div class="sectionTitle">
+        <h3>Get your config files</h3>
 
-      <p>
-        Then open the Steam directory folder <code>C:\Program Files (x86)\Steam\userdata\<a href="https://www.steamidfinder.com/">USER_ID</a>\730\local\cfg</code>
-      </p>
-    </div>
-
-    <div class="inputDiv">
-      <label for="vcfgInput">
-        Upload <code>cs2_machine_convars.vcfg</code>, <code>cs2_user_convars_0_slot0.vcfg</code> and <code>cs2_user_keys_0_slot0.vcfg</code> files here
-      </label>
-      <input id="vcfgInput" type="file" accept=".vcfg" multiple>
-    </div>
-
-    <div class="generateDiv">
-      <div>
-        <label for="excludeXhairViewmodel">Exclude crosshair and viewmodel</label>
-        <input id="excludeXhairViewmodel" type="checkbox" checked>
+        <span>#1</span>
       </div>
 
-      <textarea id="aliasTextarea" placeholder="Insert your alias here"></textarea>
+      <div class="sectionContent">
+        <ol>
+          <li>Open CS2</li>
+          <li>Set your desired settings</li>
+          <li>Enable developer console</li>
+          <li>Run <code>host_writeconfig</code></li>
+          <li>Open Steam userdata folder <code>C:\Program Files (x86)\Steam\userdata\<a href="https://www.steamidfinder.com/">USER_ID</a>\730\local\cfg</code></li>
+        </ol>
+      </div>
+    </section>
 
-      <input id="generateInput" type="submit" value="Generate CFG">
-    </div>
+    <section id="step2">
+      <div class="sectionTitle">
+        <h3>Alias and files</h3>
+
+        <span>#2</span>
+      </div>
+
+      <div class="sectionContent">
+        <div class="labelAndInput">
+          <label for="vcfgInput">
+            Upload <code>cs2_machine_convars.vcfg</code>, <code>cs2_user_convars_0_slot0.vcfg</code> and <code>cs2_user_keys_0_slot0.vcfg</code> files here
+          </label>
+          <input id="vcfgInput" type="file" accept=".vcfg" multiple>
+        </div>
+
+        <br>
+
+        <div class="labelAndInput">
+          <label for="aliasTextarea">Insert your alias here (optional)</label>
+          <textarea id="aliasTextarea" placeholder="Insert your alias here"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section id="step3">
+      <div class="sectionTitle">
+        <h3>Geneate your <code>autoexec.cfg</code></h3>
+
+        <span>#3</span>
+      </div>
+
+      <div class="sectionContent">
+        <div class="labelAndCheckboxInput">
+          <label for="excludeXhairViewmodel">Exclude crosshair and viewmodel</label>
+          <input id="excludeXhairViewmodel" type="checkbox" checked>
+        </div>
+
+        <input id="generateInput" type="submit" value="Generate CFG">
+      </div>
+    </section>
   </main>
 
   <footer>

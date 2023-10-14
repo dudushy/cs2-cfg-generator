@@ -76,52 +76,88 @@ h2 {
   }
 }
 
-.tutorialDiv {
+section {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  width: 90%;
+  margin-block: 1%;
   padding: 1%;
-  border: calc(var(--responsiveUnit) * 0.1) solid var(--primary);
   border-radius: calc(var(--responsiveUnit) * 0.5);
+}
+
+#step1 {
+  border: calc(var(--responsiveUnit) * 0.1) solid var(--primary);
   color: var(--primary);
 }
 
-.tutorialDiv code {
-  color: var(--light);
-}
-
-.tutorialDiv a {
-  color: var(--warning);
-}
-
-.inputDiv {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  margin-top: 1%;
-  padding: 1%;
+#step2 {
   border: calc(var(--responsiveUnit) * 0.1) solid var(--warning);
-  border-radius: calc(var(--responsiveUnit) * 0.5);
   color: var(--warning);
 }
 
-.inputDiv code {
+#step3 {
+  border: calc(var(--responsiveUnit) * 0.1) solid var(--success);
+  color: var(--success);
+}
+
+.sectionTitle h3 {
+  margin:0;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1%;
+  margin-bottom: 1%;
+}
+
+#step1 .sectionTitle {
+  border-bottom: calc(var(--responsiveUnit) * 0.2) solid var(--primary);
+}
+
+#step2 .sectionTitle {
+  border-bottom: calc(var(--responsiveUnit) * 0.2) solid var(--warning);
+}
+
+#step3 .sectionTitle {
+  border-bottom: calc(var(--responsiveUnit) * 0.2) solid var(--success);
+}
+
+li {
+  text-align: left;
+}
+
+li a {
+  color: var(--secondary);
+}
+
+/* .sectionContent {} */
+
+.labelAndInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1%;
+}
+
+.labelAndCheckboxInput {
+  display: flex;
+  align-items: center
+}
+
+label {
+  text-align: left;
+}
+
+code {
   color: var(--light);
 }
 
-.generateDiv {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  margin-top: 1%;
-  padding: 1%;
-  border: calc(var(--responsiveUnit) * 0.1) solid var(--success);
-  border-radius: calc(var(--responsiveUnit) * 0.5);
-}
-
-.generateDiv input[type="submit"] {
+input[type="submit"] {
   color: var(--success);
   background: var(--dark);
-  margin-top: 6%;
-  padding: 5%;
+  margin-top: 1%;
+  width: 100%;
+  padding: 2%;
 }
