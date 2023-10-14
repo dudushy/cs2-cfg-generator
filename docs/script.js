@@ -95,29 +95,31 @@ async function readFile(file) {
         // console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) line`, line);
 
         const matches = line.match(/"([^"]+)"\s+"([^"]+)"/);
-        if (matches && matches.length === 3) {
-          const firstValue = matches[1];
-          const secondValue = matches[2];
+        if (!(matches && matches.length === 3)) return;
 
-          let resultLine = '';
+        const firstValue = matches[1];
+        const secondValue = matches[2];
 
-          if (file.name == 'cs2_user_keys_0_slot0.vcfg' && secondValue != '<unbound>') {
-            resultLine = `bind "${firstValue}" "${secondValue}"\n`;
-          } else {
-            if (excludeXhairViewmodel) {
-              if (excludeArray.includes(firstValue)) {
-                console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) excludeArray.includes(${firstValue})`, excludeArray.includes(firstValue));
-              } else {
-                resultLine = `${firstValue} "${secondValue}"\n`;
-              }
+        let resultLine = '';
+
+        if (file.name == 'cs2_user_keys_0_slot0.vcfg') {
+          // console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) secondValue`, secondValue);
+
+          if (secondValue != '<unbound>') resultLine = `bind "${firstValue}" "${secondValue}"\n`;
+        } else {
+          if (excludeXhairViewmodel) {
+            if (excludeArray.includes(firstValue)) {
+              console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) excludeArray.includes(${firstValue})`, excludeArray.includes(firstValue));
             } else {
-              resultLine = `${firstValue} "${secondValue}"\n`;
+              resultLine = `${firstValue.split('$')[0]} "${secondValue}"\n`;
             }
+          } else {
+            resultLine = `${firstValue.split('$')[0]} "${secondValue}"\n`;
           }
-
-          console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) resultLine`, resultLine);
-          cfg += resultLine;
         }
+
+        console.log(`[${TITLE}#readFile#reader.onload] (${file.name}) resultLine`, resultLine);
+        cfg += resultLine;
       });
 
       resolve();
