@@ -132,9 +132,7 @@ async function readFile(file) {
 async function generateCfg() {
   cfg += '// Generated with cs2-cfg-generator\n';
   cfg += '// https://dudushy.github.io/cs2-cfg-generator/\n';
-  cfg += '// Made by dudushy\n';
-
-  cfg += '\nunbindall\n\n';
+  cfg += '// Made by dudushy\n\n';
 
   const aliasTextarea = document.getElementById('aliasTextarea');
   console.log(`[${TITLE}#generateCfg] aliasTextarea`, aliasTextarea);
